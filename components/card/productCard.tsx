@@ -195,7 +195,7 @@ const Price: React.FC<PriceProps> = ({ className, ...props }) => {
   return (
     <Text
       size="sm"
-      weight={600}
+      weight={700}
       color="black/800"
       className={cn("line-clamp-1", className)}
       {...props}
