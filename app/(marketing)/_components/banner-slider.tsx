@@ -59,7 +59,7 @@ export default function BannerSlider() {
     <>
       <div ref={sliderRef} className="keen-slider rounded-md">
         <div className="keen-slider__slide number-slide1">
-          <div className="hidden md:block w-full h-auto max-h-[400px]">
+          <div className="hidden md:block w-full h-auto">
             <img
               src="/banner-one-big.svg"
               alt="banner"
@@ -70,12 +70,12 @@ export default function BannerSlider() {
             <img
               src="/banner-one-small.svg"
               alt="banner"
-              className="h-[300px] min-h-[300px] w-full object-cover"
+              className="h-full w-full object-contain"
             />
           </div>
         </div>
         <div className="keen-slider__slide number-slide2">
-          <div className="hidden md:block w-full h-auto max-h-[400px]">
+          <div className="hidden md:block w-full h-auto">
             <img
               src="/banner-two-big.svg"
               alt="banner"
@@ -86,7 +86,7 @@ export default function BannerSlider() {
             <img
               src="/banner-two-small.svg"
               alt="banner"
-              className="h-[300px] min-h-[300px] w-full object-cover"
+              className="h-full w-full object-contain"
             />
           </div>
         </div>

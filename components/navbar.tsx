@@ -48,6 +48,7 @@ export const Navbar = () => {
                 Get Started
               </Link>
               <UserDropDown /> */}
+              <p>wahala</p>
               <UserAuthButton />
               <ModeToggle />
               <MobileToggle />
