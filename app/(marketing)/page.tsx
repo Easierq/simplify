@@ -29,6 +29,8 @@ async function HeroPage() {
     },
   });
 
+  console.log(courses);
+
   return (
     <>
       {/* <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-20">

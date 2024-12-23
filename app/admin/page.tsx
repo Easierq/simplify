@@ -18,12 +18,15 @@ const AdminPage = async () => {
   return (
     <div className="py-10">
       <div className="space-y-4">
-        <div className="flex items-center font-semibold text-lg md:text-xl text-neutral-700">
+        <div className="flex items-center font-semibold text-lg md:text-xl text-neutral-700 dark:text-slate-300">
           <BookOpen className="h-6 w-6 mr-2" />
           My courses
         </div>
-        <p className="font-semibold text-sm text-slate-500">
-          Click the <span className="text-slate-800">"Create new course"</span>{" "}
+        <p className="font-semibold text-sm text-slate-500 dark:text-slate-200">
+          Click the{" "}
+          <span className="text-slate-800 dark:text-slate-300">
+            "Create new course"
+          </span>{" "}
           to add new course/Click course to edit it.
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">

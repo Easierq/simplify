@@ -142,7 +142,7 @@ CourseTabProps) => {
             //   course={course}
             //   params={params}
             // />
-            <p>coming soon</p>
+            <p className="text-3xl uppercase">coming soon</p>
           )}
         </div>
       </div>

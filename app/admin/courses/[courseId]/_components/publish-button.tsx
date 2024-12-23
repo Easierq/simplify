@@ -42,7 +42,7 @@ export const PublishButton = ({
         // confetti.onOpen();
       }
 
-      router.refresh();
+      router.push("/admin");
     } catch {
       toast.error("Something went wrong");
     } finally {
