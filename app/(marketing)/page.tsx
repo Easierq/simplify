@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 // import { BentoDemo } from "@/components/bento-features";
 // import { Icons } from "@/components/icons";
 // import BlurIn from "@/components/magicui/blur-in";
@@ -28,9 +29,7 @@ async function HeroPage() {
       createdAt: "desc",
     },
   });
-
-  console.log(courses);
-
+  revalidatePath("/");
   return (
     <>
       {/* <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-20">

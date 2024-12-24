@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
+import { revalidatePath } from "next/cache";
 import { BookOpen } from "lucide-react";
 import { Add } from "@/components/icons";
 import { db } from "@/lib/db";
@@ -14,7 +14,7 @@ const AdminPage = async () => {
       createdAt: "desc",
     },
   });
-
+  revalidatePath("/admin");
   return (
     <div className="py-10">
       <div className="space-y-4">
