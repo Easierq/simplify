@@ -41,7 +41,7 @@ export const UserAuthButton = () => {
           role="button"
           className={cn(
             buttonVariants({ variant: "default", size: "sm" }),
-            "px-4 h-8 font-semibold bg-[#007bff] hover:bg-[#007bff]/80 rounded-none"
+            "px-4 h-8 font-semibold dark:text-white bg-[#007bff] hover:bg-[#007bff]/80 rounded-none"
           )}
         >
           Get Started
