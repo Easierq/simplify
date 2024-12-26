@@ -36,27 +36,76 @@ export default function Slider({ courses }: Props) {
     },
     slides: {
       spacing: 12,
-      perView: 1.5,
+      perView: 1.3,
     },
     mode: "snap",
     breakpoints: {
+      "(min-width: 460px)": {
+        slides: {
+          perView: 1.4,
+          spacing: 16,
+        },
+        mode: "free-snap",
+      },
+      "(min-width: 540px)": {
+        slides: {
+          perView: 1.4,
+          spacing: 16,
+        },
+        mode: "free-snap",
+      },
+      "(min-width: 620px)": {
+        slides: {
+          perView: 1.7,
+          spacing: 16,
+        },
+        mode: "free-snap",
+      },
+      "(min-width: 740px)": {
+        slides: {
+          perView: 2,
+          spacing: 16,
+        },
+        mode: "free-snap",
+      },
       "(min-width: 768px)": {
         slides: {
-          perView: 3,
+          perView: 2,
+          spacing: 16,
+        },
+        mode: "free-snap",
+      },
+      "(min-width: 888px)": {
+        slides: {
+          perView: 2.4,
           spacing: 16,
         },
         mode: "free-snap",
       },
       "(min-width: 1024px)": {
         slides: {
-          perView: 4,
+          perView: 2.8,
+          spacing: 16,
+        },
+        mode: "free-snap",
+      },
+      "(min-width: 1124px)": {
+        slides: {
+          perView: 3,
           spacing: 16,
         },
         mode: "free-snap",
       },
       "(min-width: 1280px)": {
         slides: {
-          perView: 5,
+          perView: 3.7,
+          spacing: 16,
+        },
+        mode: "free-snap",
+      },
+      "(min-width: 1360px)": {
+        slides: {
+          perView: 3.8,
           spacing: 16,
         },
         mode: "free-snap",
@@ -74,7 +123,7 @@ export default function Slider({ courses }: Props) {
 
   if (loading)
     return (
-      <div className="mb-[70px]">
+      <div className="mb-8 md:mb-20">
         <div className="mb-3">
           <h1 className="text-lg md:text-xl text-slate-800 dark:text-slate-300 font-bold">
             Recommended 1-on-1 Sessions
@@ -89,7 +138,7 @@ export default function Slider({ courses }: Props) {
     );
 
   return (
-    <div className="relative mb-[70px]">
+    <div className="relative mb-8 md:mb-20">
       {loaded && instanceRef.current && (
         <>
           <button
@@ -120,13 +169,19 @@ export default function Slider({ courses }: Props) {
         {courses.map((course) => (
           <div key={course.id} className="keen-slider__slide">
             <ProductCard.Root data={course}>
-              <ProductCard.Thumbnail className="rounded-t-lg overflow-hidden">
+              <ProductCard.Thumbnail className="rounded-md overflow-hidden">
                 <ProductCard.ThumbnailBadge>
                   {/* <ProductCard.Badge>new</ProductCard.Badge> */}
                   {/* <ProductCard.WishlistButton /> */}
                 </ProductCard.ThumbnailBadge>
 
-                <ProductCard.Image className="rounded-t-lg" />
+                {/* <ProductCard.Image className="rounded-t-lg" /> */}
+
+                <img
+                  src={course.imageUrl as string}
+                  alt="c-pic"
+                  className="object-fill h-full w-full min-h-full min-w-full"
+                />
               </ProductCard.Thumbnail>
 
               <ProductCard.Content>
@@ -139,7 +194,7 @@ export default function Slider({ courses }: Props) {
                 className="w-max dark:border-slate-200"
                 onClick={() => onOpen(course.id)}
               >
-                Book Now
+                Enroll Now
               </Button>
             </ProductCard.Root>
           </div>

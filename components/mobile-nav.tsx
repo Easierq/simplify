@@ -23,7 +23,7 @@ function MobileNav() {
           alt="logo"
           width={124}
           height={32}
-          className="block md:hidden min-w-[124px]"
+          className="block md:hidden min-w-[110px]"
         />
       </div>
     </MobileLink>

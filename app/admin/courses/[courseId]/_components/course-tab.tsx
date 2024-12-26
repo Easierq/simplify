@@ -29,6 +29,7 @@ import { Actions } from "./actions";
 import { Attachment, Chapter, Course } from "@prisma/client";
 import { PublishButton } from "./publish-button";
 import Link from "next/link";
+import { CalenderForm } from "./calender-form";
 
 type CourseWithRelations = Course & {
   chapters: Chapter[];
@@ -82,6 +83,7 @@ CourseTabProps) => {
   const requiredFields = [
     course.title,
     course.description,
+    course.calenderLink,
     course.imageUrl,
     course.price,
     // course.categoryId,
@@ -182,6 +184,7 @@ const LiveSessionTab = ({
         <div className="space-y-6">
           <div></div>
           <div>
+            <CalenderForm initialData={course} courseId={course.id} />
             <PriceForm initialData={course} courseId={course.id} />
           </div>
           <div></div>

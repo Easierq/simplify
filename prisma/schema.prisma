@@ -48,15 +48,16 @@ model User {
 }
 
 model Course {
-  id          String  @id @default(uuid()) @map("_id")
-  title       String
-  description String?
-  imageUrl    String?
-  price       Float?
-  isPublished Boolean @default(false)
-  isLive      Boolean @default(false)
-  isVideo     Boolean @default(false)
-  isFeatured  Boolean @default(false)
+  id           String  @id @default(uuid()) @map("_id")
+  title        String
+  description  String?
+  calenderLink String?
+  imageUrl     String?
+  price        Float?
+  isPublished  Boolean @default(false)
+  isLive       Boolean @default(false)
+  isVideo      Boolean @default(false)
+  isFeatured   Boolean @default(false)
 
   categoryId String?
   category   Category? @relation(fields: [categoryId], references: [id])

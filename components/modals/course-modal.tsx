@@ -37,7 +37,7 @@ export const CourseModal = () => {
           </DialogPrimitive.Close>
           <div className="border-none overflow-scroll hidden-scrollbar w-full">
             <div className="space-y-1 md:space-y-3 pt-12 pb-6 flex flex-col justify-center items-center text-center px-4 md:px-12">
-              <Skeleton className="h-[180px] w-[180px] mb-3 md:mb-5" />
+              <Skeleton className="h-[180px] w-[280px] mb-3 md:mb-5" />
               <div className="space-y-2 py-2 w-full flex flex-col justify-center items-center text-center">
                 <Skeleton className="h-[40px] w-[180px]" />
                 <Skeleton className="h-[22px] w-[60%]" />
@@ -70,13 +70,20 @@ export const CourseModal = () => {
         </DialogPrimitive.Close>
         <div className="border-none overflow-scroll hidden-scrollbar">
           <div className="space-y-3 pt-12 pb-6 flex flex-col justify-center items-center text-center px-4 md:px-12">
-            <div className="rounded-md bg-slate-100 overflow-hidden h-[200px] w-[200px]">
-              <Image
+            <div className="rounded-md bg-slate-100 overflow-hidden aspect-video">
+              {/* <Image
                 width={200}
                 height={200}
                 src={cardData.imageUrl as string}
                 alt="c-pic"
-                className="object-cover min-w-[200px] min-h-[200px]"
+                className="object-cover h-full w-full"
+              /> */}
+              <img
+                width={200}
+                height={200}
+                src={cardData.imageUrl as string}
+                alt="c-pic"
+                className="object-cover h-full w-full max-h-[300px] max-w-[300px]"
               />
             </div>
             <div className="space-y-2 py-2">
@@ -102,8 +109,15 @@ export const CourseModal = () => {
             <p className="text-2xl font-bold text-slate-700 dark:text-slate-200 mt-4">
               ₦{formatPrice(cardData.price as number)}
             </p>
-            <Button variant="default" className="w-max px-8" onClick={() => {}}>
-              Book Now
+            <Button
+              asChild
+              variant="default"
+              className="w-max px-8"
+              onClick={() => {}}
+            >
+              <a href={cardData.calenderLink as string} target="_blank">
+                Book Now
+              </a>
             </Button>
           </div>
         </div>

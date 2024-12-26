@@ -13,8 +13,8 @@ import { UserAuthButton } from "./user-auth-button";
 
 export const Navbar = () => {
   return (
-    <header className="h-14 sticky flex items-center top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="flex h-auto items-center justify-between w-full px-[5%] md:px-[7%]">
+    <header className="h-14 sticky px-[5%] md:px-[7%] flex items-center top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="mx-auto w-full max-w-[1440px] flex h-auto items-center justify-between">
         <MobileNav />
         <MainNav />
         <nav>

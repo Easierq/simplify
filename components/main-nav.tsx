@@ -28,7 +28,7 @@ export function MainNav() {
             alt="logo"
             width={124}
             height={32}
-            className="hidden md:block min-w-[124px]"
+            className="hidden md:block min-w-[110px]"
           />
         </Link>
         <div className="hidden md:flex gap-4 items-center w-full">

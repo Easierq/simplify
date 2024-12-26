@@ -60,6 +60,14 @@ module.exports = withUt({
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        seamless: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
         "animation-pulse": {
           "0%": {
             transform: "scale(0.8)",
@@ -112,6 +120,8 @@ module.exports = withUt({
         "animation-pulse": "pulse 2s infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        scroll: "scroll 10s linear infinite",
+        seamless: "seamless 20s linear infinite",
       },
     },
   },

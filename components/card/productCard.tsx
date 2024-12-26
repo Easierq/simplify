@@ -45,7 +45,9 @@ const Thumbnail: React.FC<ThumbnailProps> = ({ className, children }) => {
   return (
     <div
       className={cn(
-        "group relative flex h-[240px] w-full flex-col justify-between overflow-hidden bg-[#F3F5F7] p-3.5",
+        // "group relative flex h-[200px] w-full flex-col justify-between overflow-hidden bg-[#F3F5F7] p-3.5",
+        // "group relative flex aspect-video flex-col justify-between overflow-hidden bg-[#F3F5F7] p-3.5",
+        "group relative aspect-video overflow-hidden bg-[#F3F5F7]",
         className
       )}
     >
@@ -121,7 +123,7 @@ type ImageProps = Omit<NextImageProps, "src" | "alt">;
 
 const Image: React.FC<ImageProps> = ({
   width = 231,
-  height = 240,
+  height = 500,
   className,
   ...props
 }) => {
@@ -134,7 +136,7 @@ const Image: React.FC<ImageProps> = ({
       height={height}
       alt="course-pic"
       className={cn(
-        "absolute left-0 top-0 z-0 h-full w-full object-cover",
+        "absolute left-0 top-0 z-0 h-full w-full object-fill",
         className
       )}
       {...props}

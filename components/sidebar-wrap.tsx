@@ -32,18 +32,17 @@ export const SidebarWrap = () => {
             <p className="">Create course</p>
           </Link>
         )}
-        <div className="flex flex-col mb-2">
+        {/* <div className="flex flex-col mb-2">
           <p className="text-slate-400 mb-1">Courses</p>
           <div className="flex items-center gap-2 ml-1">
             <Video className="h-5 w-5" />
             <SheetClose asChild>
               <Link href={`/courses`} className="block">
-                {/* <span className="font-medium text-xs">UI/UX</span> */}
                 <p className="font-medium text-xs"> UI/UX</p>
               </Link>
             </SheetClose>
           </div>
-        </div>
+        </div> */}
         <div className="mt-auto">
           {status === "unauthenticated" && (
             <div className="flex w-full items-center justify-between gap-x-4">

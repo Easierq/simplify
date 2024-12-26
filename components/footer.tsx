@@ -3,17 +3,17 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="mx-auto px-[5%] lg:px-[7%] py-8">
-      <div className="">
+    <footer className="px-[5%] lg:px-[7%] py-8">
+      <div className="mx-auto max-w-[1440px]">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="flex flex-col gap-2 max-w-[70%]">
             <Link href="/" className="flex items-center">
               <Image
                 src="/logo.svg"
                 alt="logo"
-                width={124}
-                height={32}
-                className="min-w-[124px]"
+                width={110}
+                height={28}
+                className="min-w-[110px]"
               />
             </Link>
             {/* LOGO */}
