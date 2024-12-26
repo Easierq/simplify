@@ -28,7 +28,7 @@ export const UserAuthButton = () => {
           role="button"
           className={cn(
             buttonVariants({ variant: "default", size: "sm" }),
-            "px-4 h-8 font-semibold rounded-none"
+            "px-4 h-8 font-semibold rounded-none hidden md:flex"
           )}
         >
           <Plus className="w-4 h-4 font-bold mb-[1px] text-white dark:text-black" />
@@ -41,7 +41,7 @@ export const UserAuthButton = () => {
           role="button"
           className={cn(
             buttonVariants({ variant: "default", size: "sm" }),
-            "px-4 h-8 font-semibold bg-[#007bff] rounded-none"
+            "px-4 h-8 font-semibold bg-[#007bff] hover:bg-[#007bff]/80 rounded-none"
           )}
         >
           Get Started

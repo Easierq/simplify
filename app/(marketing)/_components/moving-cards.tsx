@@ -62,20 +62,20 @@ export default function InfiniteHorizontalScroll() {
     >
       <div className="flex whitespace-nowrap">
         {data.map((d, index) => (
-          <div className="w-auto min-w-44 md:min-w-64 h-20 md:h-24 flex gap-5 items-center mx-2 md:mx-4 justify-center bg-sky-100 rounded-md">
+          <div className="w-auto min-w-max h-20 md:h-22 px-3 md:px-5 flex gap-3 items-center mx-2 md:mx-4 justify-center bg-sky-100 rounded-md">
             <div>
-              <img src={d.src} alt="" className="w-[48px] h-[48px]" />
+              <img src={d.src} alt="" className="w-[40px] h-[40px]" />
             </div>
-            <span>{d.title}</span>
+            <span className="font-bold text-black">{d.title}</span>
           </div>
         ))}
         {/* Duplicate for infinite scroll */}
         {data.map((d, index) => (
-          <div className="w-auto min-w-44 md:min-w-64 h-20 md:h-24 flex gap-5 items-center mx-2 md:mx-4 justify-center bg-sky-100 rounded-md">
+          <div className="w-auto min-w-max h-20 md:h-22 px-3 md:px-5 flex gap-3 items-center mx-2 md:mx-4 justify-center bg-sky-100 rounded-md">
             <div>
-              <img src={d.src} alt="" className="w-[48px] h-[48px]" />
+              <img src={d.src} alt="" className="w-[40px] h-[40px]" />
             </div>
-            <span>{d.title}</span>
+            <span className="font-bold text-black">{d.title}</span>
           </div>
         ))}
       </div>
