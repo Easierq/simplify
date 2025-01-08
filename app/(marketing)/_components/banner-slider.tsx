@@ -52,7 +52,7 @@ export default function BannerSlider() {
   if (loading)
     return (
       <div>
-        <Skeleton className="w-full h-[140px] md:h-[240px] animate-none" />
+        <Skeleton className="w-full h-[140px] md:h-[320px] animate-none" />
       </div>
     );
   return (

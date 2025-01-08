@@ -1,56 +1,65 @@
 const Testimonials = () => {
   const testimonials = [
     {
-      avatar:
-        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-      name: "Alex wonderson",
-      title: "Founder of Lyconf",
+      avatar: "",
+      name: "Ayodele",
+      title: "Video Producer",
       quote:
-        "As a small business owner, I was doing everything and my workload was increasing. With this startup, I was able to save time so I could focus on the things that matter most: my clients and my family.",
+        "I am very proud of how articulate he is in conveying his thoughts and ideas, very gifted instructor, highly recommended.",
     },
     {
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-      name: "Karim ahmed",
-      title: "DevOps engineer",
+      avatar: "",
+      name: "Dennis",
+      title: "UI/UX designer",
       quote:
-        "My company's software now is easy to use, saves time and money, and is loved by a lot of users. One customer saved $10k over the course of 3 years and another saves 8 hours per week! Thanks to Blinder.",
+        "Thanks so much, I really appreciate you. I’m currently working full-time with a US based company.",
     },
     {
-      avatar:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
-      name: "Lysa stian",
-      title: "System manger",
+      avatar: "",
+      name: "Adebayo",
+      title: "Graphic Designer",
       quote:
-        "My business was in a dire situation. I had no idea what to do, and I felt like I was losing hope. Then I found this Startup and everything changed. It helped me create automated sales.",
+        "Highly efficient teaching approach, which helps to make learning fun and interesting. When I was afraid of learning design ... he made it easier for me to learn, and today, I am a PRO !.",
     },
     {
-      avatar: "https://randomuser.me/api/portraits/women/79.jpg",
-      name: "Angela stian",
+      avatar: "",
+      name: "David",
       title: "Product designer",
       quote:
-        "One day, my company was about to go under and I had no idea what to do. I found Blinder and it helped me get my business back on track.Now, my company is flourishing and I see new opportunities.",
+        "Besides being a great coach and tutor, he doesn't just stop at teaching. He follows up on the students progress and continuously contributes to their growth.",
     },
     {
-      avatar:
-        "https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
-      name: "Jurica koletic",
-      title: "Founder of Let’s code",
+      avatar: "",
+      name: "Prince",
+      title: "Web designer",
       quote:
-        "In these difficult economic times, doing business is tough. Funding is hard to come by and many entrepreneurs are struggling to keep their doors open. but when I found this startup everything changed.",
+        "To be honest when I joined the class I thought we were just going to learn flyers and posters but I was surprised when we learnt Branding, product package designing, Photoshop, picture manipulation and editing, then to top it off digital art.",
     },
     {
-      avatar:
-        "https://images.unsplash.com/photo-1590038767624-dac5740a997b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-      name: "Kavi laron",
-      title: "Full stack engineer",
+      avatar: "",
+      name: "Mathew",
+      title: " Graphic Designer",
       quote:
-        "We all know how costly it is to find good help. I was faced with this problem when I lost my data entry staff and my business was on the brink of going under. Thankfully, Blinder saved the day.",
+        "He had a great attitude and was approachable. He explains technical definitions clearly. Fun class. I was surprised at how many notes and ideas I took away from this course. Now I'm intotech without any doubt",
+    },
+    {
+      avatar: "",
+      name: "Tunmishe",
+      title: " Graphic Designer/Video Editor",
+      quote:
+        "The best teacher ever. You need to see what I'm doing with video editing and in a very shorttime you taught me a lot and you motivated me.",
+    },
+    {
+      avatar: "",
+      name: "Toyosi",
+      title: " Graphic Designer",
+      quote:
+        "Not only are you calm at teaching ,you also made learning fun and it always increases mycuriosity towards designing.",
     },
   ];
 
   return (
-    <section>
+    <section className="">
       <div id="testimonials" className="w-full mx-auto">
         <div className="max-w-2xl sm:text-center md:mx-auto">
           <h2 className="text-slate-800 dark:text-slate-300 text-3xl font-semibold sm:text-4xl">
@@ -60,12 +69,14 @@ const Testimonials = () => {
             Listen to what the experts around the world are saying about us.
           </p>
         </div>
-        <div className="mt-12">
+        <div className="mt-12 relative">
+          <div className="absolute bottom-auto left-auto right-0 top-0 h-[400px] w-[400px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[#ff5a4a]/40 opacity-50 blur-[80px]"></div>
+          <div className="absolute top-auto left-0 right-auto bottom-0 h-[400px] w-[400px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(109,224,244,0.4)] opacity-50 blur-[80px]"></div>
           <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((item, idx) => (
               <li
                 key={idx}
-                className="bg-white dark:bg-slate-500 border p-4 rounded-xl"
+                className="bg-white dark:bg-slate-700 border-2 dark:border-slate-500 p-4 rounded-xl"
               >
                 <figure>
                   <div className="flex items-center gap-x-4">
@@ -83,7 +94,7 @@ const Testimonials = () => {
                       </span>
                     </div>
                   </div>
-                  <p className="mt-6 text-gray-700 dark:text-slate-200 text-sm">
+                  <p className="mt-6 text-gray-800 dark:text-slate-200 text-sm">
                     {item.quote}
                   </p>
                 </figure>

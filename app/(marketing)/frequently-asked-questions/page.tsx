@@ -9,7 +9,7 @@ import {
 
 export default function Faq() {
   return (
-    <div className="pt-10 md:pt-12">
+    <div className="pt-10 md:pt-12 max-w-[1440px] mx-auto">
       <div className="">
         <h2 className="text-3xl font-medium mb-6">
           Frequently Asked Questions

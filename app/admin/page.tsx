@@ -49,7 +49,7 @@ const AdminPage = async () => {
               // style={{ backgroundImage: "url(/lap.jpg" }}
             >
               <div className="bg-black/60 bottom-0 left-0 p-1 px-2 absolute w-full">
-                <h2 className="text-lg font-black text-white drop-shadow-2xl">
+                <h2 className="text-base md:text-lg font-black text-white drop-shadow-2xl line-clamp-3 xl:line-clamp-none">
                   {course.title}
                 </h2>
               </div>

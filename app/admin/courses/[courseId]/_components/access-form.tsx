@@ -13,29 +13,28 @@ import { Course } from "@prisma/client";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 
-interface DescriptionFormProps {
+interface ChapterAccessFormProps {
   initialData: Course;
   courseId: string;
 }
 
 const formSchema = z.object({
-  calenderLink: z.string().min(1, {
-    message: "Link is required",
-  }),
+  isFree: z.boolean().default(false),
 });
 
-export const CalenderForm = ({
+export const AccessForm = ({
   initialData,
   courseId,
-}: DescriptionFormProps) => {
+}: ChapterAccessFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current);
@@ -45,7 +44,7 @@ export const CalenderForm = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      calenderLink: initialData?.calenderLink || "",
+      isFree: !!initialData.isFree,
     },
   });
 
@@ -54,7 +53,7 @@ export const CalenderForm = ({
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await axios.patch(`/api/courses/${courseId}`, values);
-      toast.success("Course updated");
+      toast.success("Chapter updated");
       toggleEdit();
       router.refresh();
     } catch {
@@ -65,30 +64,31 @@ export const CalenderForm = ({
   return (
     <div className="mt-6 border-2 border-slate-300 bg-slate-50 dark:bg-slate-800/80 rounded-md p-4">
       <div className="font-medium flex items-center justify-between dark:text-slate-300">
-        Course link
+        Course access
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>Cancel</>
           ) : (
             <>
               <Pencil className="h-4 w-4" />
-              Edit link
+              Edit access
             </>
           )}
         </Button>
       </div>
       {!isEditing && (
-        // <div className="pr-4 overflow-hidden">
         <p
           className={cn(
-            "text-sm mt-2 dark:text-slate-300 w-auto overflow-hidden",
-            !initialData.calenderLink && "text-slate-500 italic"
+            "text-sm mt-2 dark:text-slate-300",
+            !initialData.isFree && "text-slate-500 italic"
           )}
-          onClick={toggleEdit}
         >
-          {initialData.calenderLink || "No available link"}
+          {initialData.isFree ? (
+            <>This course is free to take.</>
+          ) : (
+            <>This course is not free.</>
+          )}
         </p>
-        // </div>
       )}
       {isEditing && (
         <Form {...form}>
@@ -98,17 +98,20 @@ export const CalenderForm = ({
           >
             <FormField
               control={form.control}
-              name="calenderLink"
+              name="isFree"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
                   <FormControl>
-                    <Textarea
-                      disabled={isSubmitting}
-                      placeholder="e.g. 'Link for...'"
-                      {...field}
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <div className="space-y-1 leading-none">
+                    <FormDescription>
+                      Check this box if you want this course to be free.
+                    </FormDescription>
+                  </div>
                 </FormItem>
               )}
             />

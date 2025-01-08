@@ -24,7 +24,7 @@ export function LoginForm({
       <Card className="py-8 border-none shadow-none">
         <CardHeader className="text-center">
           <CardTitle className="text-lg md:text-xl font-semibold">
-            Sign in to Simplify
+            Login to Simplify
           </CardTitle>
           {/* <CardDescription>
             Login with your Apple or Google account

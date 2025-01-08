@@ -58,18 +58,20 @@ const Thumbnail: React.FC<ThumbnailProps> = ({ className, children }) => {
 
 const ThumbnailBadge: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
-    <div className="z-10 flex items-start justify-between">{children}</div>
+    <div className=" absolute top-2 left-2 z-10 flex items-start justify-between">
+      {children}
+    </div>
   );
 };
 
 type BadgeVariants = VariantProps<typeof badgeVariants>;
 
 const badgeVariants = cva(
-  "w-fit rounded px-3.5 py-1 font-inter text-base font-bold uppercase",
+  "w-fit rounded px-3.5 py-1 font-inter text-xs font-bold uppercase",
   {
     variants: {
       intent: {
-        default: "bg-white text-black",
+        default: "bg-[#ffd700] text-black",
         discount: "bg-[#38CB89] text-[#FEFEFE]",
       },
     },

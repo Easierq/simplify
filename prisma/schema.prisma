@@ -54,6 +54,7 @@ model Course {
   calenderLink String?
   imageUrl     String?
   price        Float?
+  isFree       Boolean @default(false)
   isPublished  Boolean @default(false)
   isLive       Boolean @default(false)
   isVideo      Boolean @default(false)

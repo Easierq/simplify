@@ -1,5 +1,6 @@
 "use client";
 
+import { useSession } from "next-auth/react";
 import { useQuery } from "@tanstack/react-query";
 import { useCardModal } from "@/hooks/use-card-modal";
 import {
@@ -12,13 +13,16 @@ import {
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { fetcher } from "@/lib/fetcher";
 import { ArrowLeft } from "lucide-react";
-import Image from "next/image";
+// import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Course } from "@prisma/client";
 import { Skeleton } from "@/components/ui/skeleton";
 import { formatPrice } from "@/lib/format";
+import Link from "next/link";
 
 export const CourseModal = () => {
+  const { status, data: session } = useSession();
+
   const id = useCardModal((state) => state.id);
   const isOpen = useCardModal((state) => state.isOpen);
   const onClose = useCardModal((state) => state.onClose);
@@ -32,6 +36,10 @@ export const CourseModal = () => {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
         <DialogContent className="">
+          <DialogHeader className="hidden">
+            <DialogTitle>course modal</DialogTitle>
+            <DialogDescription>course modal</DialogDescription>
+          </DialogHeader>
           <DialogPrimitive.Close className="bg-slate-200 dark:bg-slate-100 rounded-md p-1 absolute left-4 top-4 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
             <ArrowLeft className="h-5 w-auto text-slate-900" />
           </DialogPrimitive.Close>
@@ -59,10 +67,8 @@ export const CourseModal = () => {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="">
         <DialogHeader className="hidden">
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
-          </DialogDescription>
+          <DialogTitle>course modal</DialogTitle>
+          <DialogDescription>course modal</DialogDescription>
         </DialogHeader>
         {/* <DialogPrimitive.Close className="bg-slate-200 dark:bg-slate-100 rounded-md p-1 absolute left-4 top-4 opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"> */}
         <DialogPrimitive.Close className="bg-slate-200 dark:bg-slate-100 rounded-md p-1 absolute left-4 top-4">
@@ -78,6 +84,7 @@ export const CourseModal = () => {
                 alt="c-pic"
                 className="object-cover h-full w-full"
               /> */}
+              {/* {cardData.} */}
               <img
                 width={200}
                 height={200}
@@ -96,29 +103,48 @@ export const CourseModal = () => {
               <div className="h-[0.5px] bg-slate-300 w-[60%] mx-auto" />
             </div>
             <div className="space-y-1 py-2">
-              <p className="text-[12px] text-slate-400 dark:text-slate-300 font-semibold">
+              <p className="text-[12px] text-slate-400 dark:text-slate-300 font-semibold -mb-[6px]">
                 Session
               </p>
               <h2 className="text-[16px] text-slate-700 dark:text-slate-300 font-semibold">
-                Illustrator and photoshop
+                {cardData.title}
               </h2>
               <p className="text-slate-500 dark:text-slate-200 text-sm font-medium w-full">
                 {cardData.description}
               </p>
             </div>
-            <p className="text-2xl font-bold text-slate-700 dark:text-slate-200 mt-4">
-              ₦{formatPrice(cardData.price as number)}
-            </p>
-            <Button
-              asChild
-              variant="default"
-              className="w-max px-8"
-              onClick={() => {}}
-            >
-              <a href={cardData.calenderLink as string} target="_blank">
-                Book Now
-              </a>
-            </Button>
+            {cardData.price && (
+              <p className="text-2xl font-bold text-slate-700 dark:text-slate-200 mt-4">
+                ₦{formatPrice(cardData.price as number)}
+              </p>
+            )}
+            {status === "unauthenticated" && (
+              <div className="flex items-center justify-between gap-x-4">
+                <Button
+                  onClick={onClose}
+                  size="sm"
+                  variant="default"
+                  className="bg-primary w-full md:w-max px-12 flex-1 hover:bg-primary/75 hover:text-muted"
+                  asChild
+                >
+                  <Link href={`/login`}>
+                    <span className="text-muted">Login to continue</span>
+                  </Link>
+                </Button>
+              </div>
+            )}
+            {status === "authenticated" && (
+              <Button
+                asChild
+                variant="default"
+                className="w-max px-12"
+                onClick={() => {}}
+              >
+                <a href={cardData.calenderLink as string} target="_blank">
+                  Book Now
+                </a>
+              </Button>
+            )}
           </div>
         </div>
       </DialogContent>

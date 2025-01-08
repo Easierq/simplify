@@ -17,7 +17,19 @@ import { signOut } from "next-auth/react";
 
 export function UserDropDown() {
   const { data: session } = useSession();
-  console.log(session?.user.image);
+
+  if (!session?.user.isAdmin) {
+    return (
+      <div className="rounded-full h-8 w-8 bg-slate-200 overflow-hidden cursor-pointer">
+        <img
+          className="object-cover h-full w-full"
+          // src={session?.user.image ?? undefined}     //also correct
+          src={(session?.user.image as string) || "/noavatar.jpg"}
+          alt="alt-pic"
+        />
+      </div>
+    );
+  }
 
   return (
     <DropdownMenu>
@@ -35,13 +47,13 @@ export function UserDropDown() {
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <Link href="/create-course">
+          <Link href="/admin">
             <DropdownMenuItem>
               <User />
               <span>My Dashboard</span>
             </DropdownMenuItem>
           </Link>
-          <Link href="/create-course">
+          <Link href="/admin">
             <DropdownMenuItem>
               <BookOpen />
               <span>Browse courses</span>

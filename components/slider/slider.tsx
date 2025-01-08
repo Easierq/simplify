@@ -36,13 +36,13 @@ export default function Slider({ courses }: Props) {
     },
     slides: {
       spacing: 12,
-      perView: 1.3,
+      perView: 1.2,
     },
     mode: "snap",
     breakpoints: {
       "(min-width: 460px)": {
         slides: {
-          perView: 1.4,
+          perView: 1.3,
           spacing: 16,
         },
         mode: "free-snap",
@@ -123,7 +123,7 @@ export default function Slider({ courses }: Props) {
 
   if (loading)
     return (
-      <div className="mb-8 md:mb-20">
+      <div className="mb-8 md:mb-20 py-1">
         <div className="mb-3">
           <h1 className="text-lg md:text-xl text-slate-800 dark:text-slate-300 font-bold">
             Recommended 1-on-1 Sessions
@@ -170,13 +170,13 @@ export default function Slider({ courses }: Props) {
           <div key={course.id} className="keen-slider__slide">
             <ProductCard.Root data={course}>
               <ProductCard.Thumbnail className="rounded-md overflow-hidden">
-                <ProductCard.ThumbnailBadge>
-                  {/* <ProductCard.Badge>new</ProductCard.Badge> */}
-                  {/* <ProductCard.WishlistButton /> */}
-                </ProductCard.ThumbnailBadge>
-
+                {course.isFree && (
+                  <ProductCard.ThumbnailBadge>
+                    <ProductCard.Badge>Free session</ProductCard.Badge>
+                    {/* <ProductCard.WishlistButton /> */}
+                  </ProductCard.ThumbnailBadge>
+                )}
                 {/* <ProductCard.Image className="rounded-t-lg" /> */}
-
                 <img
                   src={course.imageUrl as string}
                   alt="c-pic"

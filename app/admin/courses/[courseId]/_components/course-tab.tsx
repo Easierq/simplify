@@ -30,6 +30,7 @@ import { Attachment, Chapter, Course } from "@prisma/client";
 import { PublishButton } from "./publish-button";
 import Link from "next/link";
 import { CalenderForm } from "./calender-form";
+import { AccessForm } from "./access-form";
 
 type CourseWithRelations = Course & {
   chapters: Chapter[];
@@ -104,28 +105,30 @@ CourseTabProps) => {
           <ArrowLeft />
         </Link>
         <h1 className="text-2xl font-medium">Course setup</h1>
-        <div className="flex gap-2 w-max bg-gray-100/50 rounded-md overflow-hidden">
-          <button
-            onClick={() => setActiveTab("Live Session")}
-            className={`py-2 px-4 text-sm text-gray-600 rounded-md  focus:outline-none ${
-              activeTab === "Live Session"
-                ? "bg-gray-300 font-semibold text-gray-700"
-                : ""
-            }`}
-          >
-            Live Session
-          </button>
-          <button
-            onClick={() => setActiveTab("Video Course")}
-            className={`py-2 px-4 text-sm text-gray-600 rounded-md focus:outline-none ${
-              activeTab === "Video Course"
-                ? "bg-gray-300  font-semibold text-gray-700"
-                : ""
-            }`}
-          >
-            Video Course
-          </button>
-        </div>
+        {!course.description && (
+          <div className="flex gap-2 w-max bg-gray-100/50 rounded-md overflow-hidden">
+            <button
+              onClick={() => setActiveTab("Live Session")}
+              className={`py-2 px-4 text-sm text-gray-600 rounded-md  focus:outline-none ${
+                activeTab === "Live Session"
+                  ? "bg-gray-300 font-semibold text-gray-700"
+                  : ""
+              }`}
+            >
+              Live Session
+            </button>
+            <button
+              onClick={() => setActiveTab("Video Course")}
+              className={`py-2 px-4 text-sm text-gray-600 rounded-md focus:outline-none ${
+                activeTab === "Video Course"
+                  ? "bg-gray-300  font-semibold text-gray-700"
+                  : ""
+              }`}
+            >
+              Video Course
+            </button>
+          </div>
+        )}
         {/* <AttachmentForm initialData={course} courseId={course.id} /> */}
 
         {/* Tab Content */}
@@ -184,8 +187,11 @@ const LiveSessionTab = ({
         <div className="space-y-6">
           <div></div>
           <div>
+            <AccessForm initialData={course} courseId={course.id} />
             <CalenderForm initialData={course} courseId={course.id} />
-            <PriceForm initialData={course} courseId={course.id} />
+            {!course.isFree && (
+              <PriceForm initialData={course} courseId={course.id} />
+            )}
           </div>
           <div></div>
           <div className="flex flex-col">

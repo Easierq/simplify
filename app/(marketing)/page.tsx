@@ -15,6 +15,7 @@ import BannerSlider from "./_components/banner-slider";
 import { db } from "@/lib/db";
 import Testimonials from "./_components/testimonials";
 import MovingCard from "./_components/moving-cards";
+import AnimatedAccordion from "./_components/accordion-list";
 
 // import { buttonVariants } from "@/components/ui/button";
 // import { cn } from "@/lib/utils";
@@ -34,7 +35,7 @@ async function HeroPage() {
   });
 
   return (
-    <div className="mx-auto max-w-[1440px] ">
+    <div className="mx-auto max-w-[1440px]">
       {/* <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-20">
         <div className="flex max-w-[64rem] mx-auto flex-col items-center gap-4 text-center sm:mb-10 lg:mb-12">
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-20">
@@ -88,15 +89,12 @@ async function HeroPage() {
           <Slider courses={courses} />
           <MovingCard />
           <Testimonials />
+          <AnimatedAccordion />
           <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center mt-10">
-            <h2 className="text-slate-800 dark:text-slate-300 text-3xl font-semibold sm:text-4xl">
-              Simplify - Unlock the Wisdom
+            <h2 className="text-slate-800 dark:text-slate-300 text-2xl md:text-3xl font-semibold sm:text-4xl">
+              Simplify | Unlock the Wisdom
             </h2>
             <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-              {/* Let&apos;s Try Now -{" "} */}
-              {/* <a href="/login" className="underline underline-offset-4">
-                Get Started
-              </a> */}
               Let&apos;s keep the focus.
             </p>
           </div>
