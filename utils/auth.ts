@@ -7,12 +7,16 @@ declare module "next-auth" {
   interface Session {
     user: User & {
       isAdmin: Boolean;
+      //new
+      id: string;
     };
   }
 }
 declare module "next-auth/jwt" {
   interface JWT {
     isAdmin: Boolean;
+    //new
+    id: string;
   }
 }
 
@@ -31,6 +35,8 @@ export const authOptions: NextAuthOptions = {
     async session({ token, session }) {
       if (token) {
         session.user.isAdmin = token.isAdmin;
+        //new
+        session.user.id = token.id;
       }
       return session;
     },
@@ -41,6 +47,7 @@ export const authOptions: NextAuthOptions = {
         },
       });
       token.isAdmin = userInDb?.isAdmin!;
+      token.id = userInDb?.id!;
       return token;
     },
   },

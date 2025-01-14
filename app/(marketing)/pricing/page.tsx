@@ -8,29 +8,8 @@ import { Icons } from "@/components/more-icons";
 import ShinyButton from "@/components/magicui/shiny-button";
 
 export default function PricingPage() {
-  // const handleCheckout = async () => {
-  //   // Call your API endpoint to create a checkout session
-  //   const res = await fetch('/api/checkout', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //   });
-
-  //   const { url } = await res.json();
-
-  //   // Redirect to Stripe Checkout
-  //   if (url) {
-  //     window.location.href = url;
-  //   } else {
-  //     // Handle error (e.g., display a message)
-  //     console.error('Failed to start the checkout process.');
-  //   }
-
-  // };
-
   return (
-    <section className="container flex flex-col  gap-6 py-8 md:max-w-[64rem] md:py-12 lg:py-24">
+    <section className="container flex flex-col gap-6 py-10 md:max-w-[64rem] md:py-12 lg:py-24">
       <div className="mx-auto flex w-full flex-col gap-4 md:max-w-[58rem]">
         <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-4xl">
           Simple, Affordable pricing

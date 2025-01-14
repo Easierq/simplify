@@ -43,8 +43,11 @@ model User {
   isAdmin       Boolean   @default(false)
   accounts      Account[]
   sessions      Session[]
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+
+  access Access[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Course {
@@ -60,6 +63,8 @@ model Course {
   isVideo      Boolean @default(false)
   isFeatured   Boolean @default(false)
 
+  access Access[]
+
   categoryId String?
   category   Category? @relation(fields: [categoryId], references: [id])
 
@@ -71,6 +76,21 @@ model Course {
   updatedAt DateTime @updatedAt
 
   @@index([categoryId])
+}
+
+model Access {
+  id               String  @id @default(uuid()) @map("_id")
+  userId           String
+  courseId         String
+  paymentConfirmed Boolean @default(false)
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, courseId])
 }
 
 model Category {

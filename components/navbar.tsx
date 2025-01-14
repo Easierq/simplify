@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import { Plus } from "lucide-react";
 
@@ -8,8 +8,10 @@ import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import MobileNav from "./mobile-nav";
 import { MainNav } from "./main-nav";
-import { UserDropDown } from "./user-drop-down";
+// import { UserDropDown } from "./user-drop-down";
 import { UserAuthButton } from "./user-auth-button";
+
+const UserSuspence = () => <div className="bg-slate-500 w-[100px] h-7" />;
 
 export const Navbar = () => {
   return (
@@ -48,7 +50,9 @@ export const Navbar = () => {
                 Get Started
               </Link>
               <UserDropDown /> */}
-              <UserAuthButton />
+              <Suspense fallback={<UserSuspence />}>
+                <UserAuthButton />
+              </Suspense>
               <ModeToggle />
               <MobileToggle />
             </div>

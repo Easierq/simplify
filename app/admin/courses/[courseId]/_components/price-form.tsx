@@ -81,7 +81,7 @@ export const PriceForm = ({ initialData, courseId }: PriceFormProps) => {
           )}
           onClick={toggleEdit}
         >
-          {initialData.price && "₦"}
+          {initialData.price ? "₦" : ""}
           {initialData.price ? formatPrice(initialData.price) : "No price"}
         </p>
       )}

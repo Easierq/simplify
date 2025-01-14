@@ -5,11 +5,16 @@ import Link from "next/link";
 import { UserDropDown } from "./user-drop-down";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/button";
-import { Plus } from "lucide-react";
+// import { Plus } from "lucide-react";
+
+const UserSuspence = () => <div className="bg-[#007bff] w-[110px] h-[30px]" />;
 
 export const UserAuthButton = () => {
   const { status, data: session } = useSession();
 
+  if (status === "loading") {
+    return <UserSuspence />;
+  }
   return (
     <div className="flex items-center gap-2 md:gap-4">
       {session?.user.isAdmin && (
@@ -31,8 +36,9 @@ export const UserAuthButton = () => {
             "px-4 h-8 font-semibold rounded-none hidden md:flex"
           )}
         >
-          <Plus className="w-4 h-4 font-bold mb-[1px] text-white dark:text-black" />
-          <p className="">Create course</p>
+          {/* <Plus className="w-4 h-4 font-bold mb-[1px] text-white dark:text-black" /> */}
+          {/* <p className="">Create course</p> */}
+          <p className="">Admin Page</p>
         </Link>
       )}
       {status === "unauthenticated" && (

@@ -27,20 +27,20 @@ export default function Footer() {
             <h3 className="text-base font-semibold mb-3">Products</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link
-                  href="/courses"
-                  className="text-gray-600 hover:text-gray-900 dark:text-slate-200"
+                <p
+                  // href="/courses"
+                  className="text-gray-500 hover:text-gray-900 dark:text-slate-200 cursor-not-allowed"
                 >
                   Video Courses
-                </Link>
+                </p>
               </li>
               <li>
-                <Link
-                  href="/courses"
-                  className="text-gray-600 hover:text-gray-900  dark:text-slate-200"
+                <p
+                  // href="/courses"
+                  className="text-gray-500 hover:text-gray-900  dark:text-slate-200"
                 >
                   Live Classes
-                </Link>
+                </p>
               </li>
             </ul>
           </div>
@@ -67,7 +67,7 @@ export default function Footer() {
               </li> */}
               <li>
                 <Link
-                  href="/terms-of-use"
+                  href="/terms"
                   className="text-gray-600 hover:text-gray-900  dark:text-slate-200"
                 >
                   Terms of use
@@ -82,7 +82,7 @@ export default function Footer() {
             <ul className="space-y-1 text-sm">
               <li>
                 <Link
-                  href="/about-us"
+                  href="/about"
                   className="text-gray-600 hover:text-gray-900  dark:text-slate-200"
                 >
                   About Us
@@ -90,7 +90,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact-us"
+                  href="/contact"
                   className="text-gray-600 hover:text-gray-900  dark:text-slate-200"
                 >
                   Contact

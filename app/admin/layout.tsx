@@ -34,6 +34,15 @@ export default async function AdminLayout({
               <div className="md:flex">
                 <div className="flex items-center gap-2 md:gap-4">
                   <Link
+                    href="/admin/access"
+                    className={cn(
+                      buttonVariants({ variant: "outline", size: "sm" }),
+                      "px-2 lg:px-3 h-8 font-semibold hidden md:flex"
+                    )}
+                  >
+                    <p className="">Grant access</p>
+                  </Link>
+                  <Link
                     href="/admin"
                     className={cn(
                       buttonVariants({ variant: "outline", size: "sm" }),
@@ -43,6 +52,7 @@ export default async function AdminLayout({
                     <Plus className="w-4 h-4 font-bold mb-[1px]" />
                     <p className="">Create course</p>
                   </Link>
+
                   {/* <UserDropDown /> */}
                   <ModeToggle />
                   <MobileToggle />

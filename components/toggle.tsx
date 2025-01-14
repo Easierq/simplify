@@ -71,7 +71,10 @@ export function ModeToggle({ className, ...props }: ButtonProps) {
   const { isDark, toggle, hydrated } = useThemeToggle();
 
   // TODO: fix layout shift from hydration
-  if (!hydrated) return null;
+  if (!hydrated)
+    return (
+      <div className="bg-slate-300 dark:bg-slate-500 w-7 h-7 rounded-sm" />
+    );
 
   return (
     <div
@@ -91,7 +94,7 @@ export function ModeToggle({ className, ...props }: ButtonProps) {
       ) : (
         // <Moon className="size-[1em] fill-current text-slate-500" />
         <MoonIcon
-          className="w-7 h-7 cursor-pointer text-slate-950 dark:text-slate-200 hover:text-slate-600 dark:hover:text-slate-50"
+          className="w-7 h-7 cursor-pointer fill-current text-slate-500 dark:text-slate-200 hover:text-slate-600 dark:hover:text-slate-50"
           onClick={toggle}
         />
       )}

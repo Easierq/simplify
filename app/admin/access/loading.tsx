@@ -3,7 +3,7 @@
 import { Loader } from "lucide-react";
 import React from "react";
 
-const LoadingPage = () => {
+const LoadSpinner = () => {
   return (
     <div className="h-[100vh] flex flex-col justify-center items-center">
       <Loader className="h-10 w-10 text-muted-foreground animate-spin" />
@@ -11,4 +11,4 @@ const LoadingPage = () => {
   );
 };
 
-export default LoadingPage;
+export default LoadSpinner;

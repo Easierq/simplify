@@ -36,7 +36,7 @@ export function LoginForm({
             <div className="flex flex-col gap-4">
               <Button
                 variant="outline"
-                className="w-full font-semibold border-2 border-black dark:border-white"
+                className="w-full font-semibold bg-blue-200/80 hover:bg-blue-200/90"
                 onClick={() => signIn("google")}
               >
                 <Image
@@ -48,6 +48,21 @@ export function LoginForm({
                 />
                 Continue with Google
               </Button>
+              {/* <Button
+                variant="outline"
+                className="w-full font-semibold border-2 border-black dark:border-white"
+                onClick={() => signIn("google")}
+              >
+                <Image
+                  src="/google.png"
+                  alt="google-img"
+                  width={14}
+                  height={14}
+                  className="mr-1 h-[14px] w-[14px]"
+                />
+                Continue with Google
+              </Button> */}
+
               {/* <Button variant="outline" className="w-full">
                   <Image
                     src="/google.png"

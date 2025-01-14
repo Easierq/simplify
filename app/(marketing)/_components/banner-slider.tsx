@@ -59,18 +59,20 @@ export default function BannerSlider() {
     <>
       <div ref={sliderRef} className="keen-slider rounded-md">
         <div className="keen-slider__slide number-slide1">
-          <div className="w-full h-auto">
+          <div className="w-full h-auto bg-muted">
             <img
-              src="/slid1.svg"
+              src="/1.png"
+              // src="/slid1.svg"
               alt="banner"
               className="h-full w-full object-contain"
             />
           </div>
         </div>
         <div className="keen-slider__slide number-slide1">
-          <div className="w-full h-auto">
+          <div className="w-full h-auto bg-muted">
             <img
-              src="/slid2.svg"
+              src="/2.jpeg"
+              // src="/slid2.svg"
               alt="banner"
               className="h-full w-full object-contain"
             />

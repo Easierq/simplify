@@ -1,16 +1,17 @@
-import React from "react";
-import Link from "next/link";
 export const dynamic = "force-dynamic";
 export const revalidate = 0; // Ensure no caching
+
+import React from "react";
+import Link from "next/link";
 import { BookOpen } from "lucide-react";
 import { Add } from "@/components/icons";
 import { db } from "@/lib/db";
 
 const AdminPage = async () => {
   const courses = await db.course.findMany({
-    where: {
-      isPublished: true,
-    },
+    // where: {
+    //   isPublished: true,
+    // },
     orderBy: {
       createdAt: "desc",
     },

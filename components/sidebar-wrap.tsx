@@ -28,8 +28,9 @@ export const SidebarWrap = () => {
               "px-2 lg:px-3 text-muted w-full h-10 font-semibold flex items-center justify-center gap-1 mb-4 bg-primary hover:bg-primary/75 hover:text-muted"
             )}
           >
-            <Plus className="w-4 h-4 font-bold mb-[1px]" />
-            <p className="">Create course</p>
+            {/* <Plus className="w-4 h-4 font-bold mb-[1px]" /> */}
+            {/* <p className="">Create course</p> */}
+            <p className="">Admin Page</p>
           </Link>
         )}
         {/* <div className="flex flex-col mb-2">
@@ -43,6 +44,23 @@ export const SidebarWrap = () => {
             </SheetClose>
           </div>
         </div> */}
+        <div className="flex flex-col mt-4">
+          <SheetClose asChild>
+            <Link href="/about" className="">
+              <p className="text-slate-600 mb-4">About Us</p>
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link href="/pricing" className="">
+              <p className="text-slate-600 mb-4">Pricing plans</p>
+            </Link>
+          </SheetClose>
+          <SheetClose asChild>
+            <Link href="/contact" className="text-slate-600 mb-4">
+              <p className="">Contact Us</p>
+            </Link>
+          </SheetClose>
+        </div>
         <div className="mt-auto">
           {status === "unauthenticated" && (
             <div className="flex w-full items-center justify-between gap-x-4">
@@ -76,7 +94,7 @@ export const SidebarWrap = () => {
               asChild
               onClick={() => signOut()}
             >
-              <span className="text-muted">Logout</span>
+              <span className="text-muted cursor-pointer">Logout</span>
             </Button>
           )}
         </div>

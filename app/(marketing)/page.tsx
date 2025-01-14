@@ -76,7 +76,7 @@ async function HeroPage() {
       <section id="open-source" className="py-8 md:py-12">
         <div className="pt-[-10px]">
           <div className="flex gap-1">
-            <h1 className="font-bold text-2xl md:text-3xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text mb-2">
+            <h1 className="font-semibold text-2xl sm:text-3xl lg:text-4xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text mb-2">
               Welcome back
             </h1>
             <div>

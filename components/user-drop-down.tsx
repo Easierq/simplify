@@ -20,14 +20,32 @@ export function UserDropDown() {
 
   if (!session?.user.isAdmin) {
     return (
-      <div className="rounded-full h-8 w-8 bg-slate-200 overflow-hidden cursor-pointer">
-        <img
-          className="object-cover h-full w-full"
-          // src={session?.user.image ?? undefined}     //also correct
-          src={(session?.user.image as string) || "/noavatar.jpg"}
-          alt="alt-pic"
-        />
-      </div>
+      // <div className="rounded-full h-8 w-8 bg-slate-200 overflow-hidden cursor-pointer">
+      //   <img
+      //     className="object-cover h-full w-full"
+      //     // src={session?.user.image ?? undefined}     //also correct
+      //     src={(session?.user.image as string) || "/noavatar.jpg"}
+      //     alt="alt-pic"
+      //   />
+      // </div>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <div className="rounded-full h-8 w-8 bg-slate-200 overflow-hidden cursor-pointer">
+            <img
+              className="object-cover h-full w-full"
+              // src={session?.user.image ?? undefined}     //also correct
+              src={(session?.user.image as string) || "/noavatar.jpg"}
+              alt="alt-pic"
+            />
+          </div>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="w-52">
+          <DropdownMenuItem onClick={() => signOut()}>
+            <LogOut />
+            <span>Log out</span>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     );
   }
 

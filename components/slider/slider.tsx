@@ -187,7 +187,13 @@ export default function Slider({ courses }: Props) {
               <ProductCard.Content>
                 {/* <ProductCard.Ratings /> */}
                 <ProductCard.Name className="dark:text-slate-200" />
-                <ProductCard.Price className="dark:text-slate-200" />
+                {!course.isFree && course.price ? (
+                  <ProductCard.Price className="dark:text-slate-200" />
+                ) : (
+                  <p className="bg-gray-200 dark:bg-slate-600 dark:text-slate-300 text-[10px] w-max p-1 px-2 italic rounded-sm">
+                    FREE
+                  </p>
+                )}
               </ProductCard.Content>
               <Button
                 variant="outline"
