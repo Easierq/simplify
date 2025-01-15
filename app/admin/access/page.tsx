@@ -11,7 +11,6 @@ const AccessPage = async () => {
   const courses = await db.course.findMany({
     where: {
       isPublished: true,
-      isFree: false,
     },
     orderBy: {
       createdAt: "desc",
