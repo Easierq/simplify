@@ -19,18 +19,21 @@ export const Navbar = () => {
       <div className="mx-auto w-full max-w-[1440px] flex h-auto items-center justify-between">
         <MobileNav />
         <MainNav />
-        <nav>
-          <div className="md:flex">
-            <div className="flex items-center gap-2 md:gap-4">
-              {/* <div className="flex md:hidden">
+        {/* <nav className=""> */}
+        <div className="md:flex">
+          <div className="flex items-center gap-2 md:gap-4">
+            {/* <div className="flex md:hidden">
                     <SearchToggle />
                   </div> */}
-              <Link href="/pricing" className="hidden md:flex">
-                <span className="text-sm font-semibold cursor-pointer hover:opacity-80">
-                  Pricing Plans
-                </span>
-              </Link>
-              {/* <Link
+            <Link
+              href="/pricing"
+              className="hidden md:inline-block whitespace-nowrap"
+            >
+              <span className="text-sm font-semibold hover:opacity-80 w-full">
+                Pricing
+              </span>
+            </Link>
+            {/* <Link
                 href="/admin"
                 className={cn(
                   buttonVariants({ variant: "outline", size: "sm" }),
@@ -50,14 +53,14 @@ export const Navbar = () => {
                 Get Started
               </Link>
               <UserDropDown /> */}
-              <Suspense fallback={<UserSuspence />}>
-                <UserAuthButton />
-              </Suspense>
-              <ModeToggle />
-              <MobileToggle />
-            </div>
+            <Suspense fallback={<UserSuspence />}>
+              <UserAuthButton />
+            </Suspense>
+            <ModeToggle />
+            <MobileToggle />
           </div>
-        </nav>
+        </div>
+        {/* </nav> */}
       </div>
     </header>
   );

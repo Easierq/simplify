@@ -93,7 +93,7 @@ export default function Footer() {
                   href="/contact"
                   className="text-gray-600 hover:text-gray-900  dark:text-slate-200"
                 >
-                  Contact
+                  Contact Us
                 </Link>
               </li>
               <li>

@@ -92,11 +92,21 @@ export function ModeToggle({ className, ...props }: ButtonProps) {
           onClick={toggle}
         />
       ) : (
+        // <MoonIcon
+        //   className="w-7 h-7 cursor-pointer fill-current text-slate-800 dark:text-slate-200 hover:text-slate-600 dark:hover:text-slate-50"
+        //   onClick={toggle}
+        // />
         // <Moon className="size-[1em] fill-current text-slate-500" />
-        <MoonIcon
-          className="w-7 h-7 cursor-pointer fill-current text-slate-500 dark:text-slate-200 hover:text-slate-600 dark:hover:text-slate-50"
-          onClick={toggle}
-        />
+        <div className="p-[6px] rounded-full bg-slate-200">
+          <MoonIcon
+            className="w-5 h-5 cursor-pointer text-slate-500 fill-current dark:text-slate-200 hover:text-slate-600 dark:hover:text-slate-50"
+            onClick={toggle}
+          />
+        </div>
+        // <Sun
+        //   className="h-7 w-7 cursor-pointer text-slate-950 dark:text-slate-200 hover:text-slate-600 dark:hover:text-slate-50"
+        //   onClick={toggle}
+        // />
       )}
     </div>
   );
