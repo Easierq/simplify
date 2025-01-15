@@ -47,16 +47,23 @@ export const SidebarWrap = () => {
         <div className="flex flex-col mt-4">
           <SheetClose asChild>
             <Link href="/about" className="">
-              <p className="text-slate-600 mb-4">About Us</p>
+              <p className="text-slate-600 dark:text-slate-200 mb-4">
+                About Us
+              </p>
             </Link>
           </SheetClose>
           <SheetClose asChild>
             <Link href="/pricing" className="">
-              <p className="text-slate-600 mb-4">Pricing plans</p>
+              <p className="text-slate-600 dark:text-slate-200 mb-4">
+                Pricing plans
+              </p>
             </Link>
           </SheetClose>
           <SheetClose asChild>
-            <Link href="/contact" className="text-slate-600 mb-4">
+            <Link
+              href="/contact"
+              className="text-slate-600 dark:text-slate-200 mb-4"
+            >
               <p className="">Contact Us</p>
             </Link>
           </SheetClose>

@@ -27,7 +27,7 @@ export const Navbar = () => {
                   </div> */}
               <Link href="/pricing" className="hidden md:flex">
                 <span className="text-sm font-semibold cursor-pointer hover:opacity-80">
-                  Pricing
+                  Pricing Plans
                 </span>
               </Link>
               {/* <Link

@@ -153,7 +153,7 @@ export const CourseModal = () => {
             {!cardData.isFree &&
               status === "authenticated" &&
               !accessData?.accessGranted && (
-                <div className="w-full p-3 rounded-r-md text-left text-yellow-700 bg-yellow-100 border-l-2 border-l-yellow-400 my-3 mb-4">
+                <div className="w-full p-3 px-2 rounded-r-md text-left text-yellow-700 bg-yellow-100 border-l-2 border-l-yellow-400 my-3 mb-4">
                   <p className="text-sm font-semibold">
                     To have access to this course;
                   </p>
